@@ -73,10 +73,27 @@ Berikut ini adalah screenshot dari hasil filter expression tersebut.
 Filter sehingga wireshark hanya mengambil paket yang berasal dari port 21!
 
 **Pembahasan:**
+Cara pengerjaan soal ini hanya menuliskan di display filter tcp.srcport == 21 or udp.srcport == 21 yang berfungsi untuk menangkap semua paket dengan protokol TCP / UDP yang menuju atau berasal dari port 21
+
+(foto)
 
 ## Soal 5
+**Deskripsi:**
+Filter sehingga wireshark hanya mengambil paket yang berasal dari port 443!
+
+**Pembahasan:**
+Cara pengerjaan soal ini hanya menuliskan di display filter tcp.srcport == 443 or udp.srcport == 443 yang berfungsi untuk menangkap semua paket dengan protokol TCP / UDP yang menuju atau berasal dari port 443
+
+(foto)
 
 ## Soal 6
+**Deskripsi:**
+Filter sehingga wireshark hanya menampilkan paket yang menuju ke lipi.go.id !
+
+**Pembahasan:**
+Cara pengerjaan soal ini hanya menuliskan di display filter tcp contains lipi.go.id yang berfungsi untuk menampilkan semua paket dengan protokl tcp yang mengandung "lipi.go.id" didalamnya.
+
+(foto)
 
 ## Soal 7
 **Deskripsi:**

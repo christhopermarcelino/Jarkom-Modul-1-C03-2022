@@ -23,9 +23,9 @@ Kelompok C03
 Sebutkan web server yang digunakan pada "monta.if.its.ac.id"! 
 
 **Pembahasan:**
-Cara untuk menemukan paket yang menuju ke URL monta.if.its.ac.id adalah dengan mencari paket yang mengandung monta.if.its.ac.id. Akan digunakan filter protokol TCP karena lazimnya untuk mengirimkan/menerima paket yang muncul pada laman monta.if.its.ac.id (seperti paket HTML, gambar, dsb) adalah dengan menggunakan protokol TCP.
+Cara untuk menemukan paket yang menuju ke URL monta.if.its.ac.id adalah dengan mencari paket yang mengandung monta.if.its.ac.id. Akan digunakan filter dengan protokol HTTP yang memiliki host monta.if.its.ac.id.
 
-`tcp contains monta.if.its.ac.id`
+`http.host == monta.if.its.ac.id`
 
 Setelah itu, klik kanan pada salah satu paket yang muncul dan pilih opsi `Follow` yang kemudian dilanjut dengan memilih opsi `TCP Stream`. Sehingga, window seperti berikut ini akan tampil.
 

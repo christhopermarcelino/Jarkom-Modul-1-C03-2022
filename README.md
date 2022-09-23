@@ -66,34 +66,36 @@ Berdasarkan gambar tersebut, port 80 digunakan oleh protokol TCP (HTTP). Maka da
 
 Berikut ini adalah screenshot dari hasil filter expression tersebut.
 
-![image](https://user-images.githubusercontent.com/34309557/191887600-e3de5c1b-a2ca-4584-9cfb-cb304fd38cb9.png)
+![image](https://user-images.githubusercontent.com/34309557/192003183-5001ec4b-ce46-47c1-b425-7ab3447e4ccf.png)
 
 ## Soal 4
 **Deskripsi:**
 Filter sehingga wireshark hanya mengambil paket yang berasal dari port 21!
 
 **Pembahasan:**
-Cara pengerjaan soal ini hanya menuliskan di display filter tcp.srcport == 21 or udp.srcport == 21 yang berfungsi untuk menangkap semua paket dengan protokol TCP / UDP yang menuju atau berasal dari port 21
+Berdasarkan gambar yang ada pada soal 3, port 21 digunakan oleh protokol TCP. Maka dari itu, cara untuk mengambil paket yang berasal dari port 21 adalah dengan filter expression sebagai berikut.
 
-(foto)
+`tcp.srcport == 21`
+
+![image](https://user-images.githubusercontent.com/34309557/192003141-b8509def-5ef7-44ba-9fea-44daf8918501.png)
 
 ## Soal 5
 **Deskripsi:**
 Filter sehingga wireshark hanya mengambil paket yang berasal dari port 443!
 
 **Pembahasan:**
-Cara pengerjaan soal ini hanya menuliskan di display filter tcp.srcport == 443 or udp.srcport == 443 yang berfungsi untuk menangkap semua paket dengan protokol TCP / UDP yang menuju atau berasal dari port 443
+Cara pengerjaan soal ini hanya menuliskan di display filter `tcp.srcport == 443 or udp.srcport == 443` yang berfungsi untuk menangkap semua paket dengan protokol TCP/UDP yang berasal dari port 443
 
-(foto)
+![image](https://user-images.githubusercontent.com/34309557/192003534-b2948503-c4e1-4094-9e03-1621d837d0f8.png)
 
 ## Soal 6
 **Deskripsi:**
 Filter sehingga wireshark hanya menampilkan paket yang menuju ke lipi.go.id !
 
 **Pembahasan:**
-Cara pengerjaan soal ini hanya menuliskan di display filter tcp contains lipi.go.id yang berfungsi untuk menampilkan semua paket dengan protokl tcp yang mengandung "lipi.go.id" didalamnya.
+Cara pengerjaan soal ini hanya menuliskan di display filter tcp contains lipi.go.id yang berfungsi untuk menampilkan semua paket dengan protokol tcp yang mengandung "lipi.go.id" dalam paketnya.
 
-(foto)
+![image](https://user-images.githubusercontent.com/34309557/192003709-38c6eb8a-340b-4c3f-b8ef-28291f2dc7aa.png)
 
 ## Soal 7
 **Deskripsi:**

@@ -45,10 +45,18 @@ Cara pengerjaan soal ini juga mirip dengan soal 1. Untuk menemukan URN apa yang 
 ![image](https://user-images.githubusercontent.com/34309557/191885301-3bcf3e8b-2ecd-4852-b2a8-fafdf5be02f5.png)
 
 
-Setelah filter dijalankan, terlihat bahwa terdapat URN yang mengandung "detail", yaitu `/index.php/topik/detailTopik/194`. Maka dari itu, tahap selanjutnya adalah mendownload semua paket HTTP dan mencari HTML File yang memiliki nama 194.
+Setelah filter dijalankan, terlihat bahwa terdapat URN yang mengandung "detail", yaitu `/index.php/topik/detailTopik/194`. Maka dari itu, tahap selanjutnya adalah mendownload semua paket HTTP dan mencari file HTML yang memiliki nama 194.
 
 ![image](https://user-images.githubusercontent.com/34309557/191885719-417a1882-dfc8-4eee-b136-a0b5c1f37f3e.png)
 
 Gambar tersebut adalah judul TA yang dibuka oleh Ishaq.
+
+## Soal 3
+**Deskripsi:**
+Filter sehingga wireshark hanya menampilkan paket yang menuju port 80!
+
+**Pembahasan:**
+
+
 
 

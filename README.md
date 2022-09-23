@@ -56,7 +56,17 @@ Gambar tersebut adalah judul TA yang dibuka oleh Ishaq.
 Filter sehingga wireshark hanya menampilkan paket yang menuju port 80!
 
 **Pembahasan:**
+![image](https://user-images.githubusercontent.com/34309557/191887279-ff714c9d-cd24-4dfc-a25b-258a171ef6b1.png)
 
+Sumber: https://linuxhint.com/filter_by_port_wireshark/
+
+Berdasarkan gambar tersebut, port 80 digunakan oleh protokol TCP (HTTP). Maka dari itu, akan digunakan filter expression protokol TCP dengan `dstport` yang berarti bahwa filter akan menangkap semua paket dengan protokol TCP yang menuju ke port 80.
+
+`tcp.dstport == 80`
+
+Berikut ini adalah screenshot dari hasil filter expression tersebut.
+
+![image](https://user-images.githubusercontent.com/34309557/191887600-e3de5c1b-a2ca-4584-9cfb-cb304fd38cb9.png)
 
 ## Soal 4
 

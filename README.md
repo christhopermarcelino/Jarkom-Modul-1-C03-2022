@@ -58,5 +58,74 @@ Filter sehingga wireshark hanya menampilkan paket yang menuju port 80!
 **Pembahasan:**
 
 
+## Soal 4
+
+## Soal 5
+
+## Soal 6
+
+## Soal 7
+> Filter sehingga wireshark hanya mengambil paket yang berasal dari ip kalian!
+
+Kami mengecek ip address di terminal cmd menggunakan command `ipconfig`
+
+![7-ipconfig](https://user-images.githubusercontent.com/78243059/191884425-6bbb6a8c-4c68-4539-ad0f-afff8fb813f4.PNG)
+
+Lalu, dengan menggunakan wireshark filter expression `ip.src == 10.27.153.227`, kita bisa mendapatkan paket yang berasal dari ip yang bersangkutan.
+
+![image](https://user-images.githubusercontent.com/78243059/191884569-167c497d-7436-4bd4-b957-c7e33954f9dd.png)
+
+## Soal 8
+> Telusuri aliran paket dalam file .pcap yang diberikan, cari informasi berguna berupa percakapan antara dua mahasiswa terkait tindakan kecurangan pada kegiatan praktikum. Percakapan tersebut dilaporkan menggunakan protokol jaringan dengan tingkat keandalan yang tinggi dalam pertukaran datanya sehingga kalian perlu menerapkan filter dengan protokol yang tersebut.
+
+Kami menggunakan wireshark filter expression `tcp.len > 0` untuk mencari paket yang berisi data. Karena pesan biasanya berisi data yang panjang, maka kami sort packet berdasarkan length terpanjang.
+
+![image](https://user-images.githubusercontent.com/78243059/191885061-46023d8d-e09a-4427-8695-c49f9460734d.png)
+
+Setelah itu, klik kanan kanan pada packet dan pilih `follow > TCP stream`.  
+Kami menemukan 3 percakapan sebagai berikut:
+
+`tcp.stream eq 12`
+
+![image](https://user-images.githubusercontent.com/78243059/191885330-d97af868-5b83-4e0a-bcca-5b24bc6e0a7a.png)
+
+
+`tcp.stream eq 41`
+
+![image](https://user-images.githubusercontent.com/78243059/191885269-c3cd7f43-81e3-4001-9fb9-8ae3ca3be886.png)
+
+
+`tcp.stream eq 90`
+
+![image](https://user-images.githubusercontent.com/78243059/191885195-4fb8b200-26eb-42fe-b1f8-ac96d8c742d1.png)
+
+## Soal 9
+> Terdapat laporan adanya pertukaran file yang dilakukan oleh kedua mahasiswa dalam percakapan yang diperoleh, carilah file yang dimaksud! Untuk memudahkan laporan kepada atasan, beri nama file yang ditemukan dengan format [nama_kelompok].des3 dan simpan output file dengan nama “flag.txt”.
+
+Berdasarkan percakapan di nomor 8, diketahui bahwa telah terjadi pertukaran file salt. Dengan cara yang sama di nomor 8, kita bisa menggunakan wireshark filter expression `tcp.len > 0` dan sort length dari yang terpanjang lalu mencari file tersebut.  
+Kita juga bisa memanfaatkan keyword salt dengan ekspresi `tcp contains Salt` untuk menemukan packet-nya. 
+
+![image](https://user-images.githubusercontent.com/78243059/191885704-21db056c-03e7-43e7-b5f0-07a8f2283b70.png)
+
+Klik kanan pada packet, `follow > TCP stream` untuk melihat isinya. Kita perlu show data sebagai raw lalu save file dengan nama `CO3.des3` sesuai permintaan soal.  
+
+![image](https://user-images.githubusercontent.com/78243059/191885895-d7026ef1-6027-46d5-a5b0-88b52201aa90.png)
+
+Cara mendapatkan `flag.txt` akan dijelaskan di nomor 10.
+
+## Soal 10
+> Temukan password rahasia (flag) dari organisasi bawah tanah yang disebutkan di atas!
+
+Setelah beberapa percobaan, melalui percakapan di nomor 8, kita menemukan password file-nya adalah `nakano`.  
+Di terminal linux, kita bisa memasukkan comamnd `openssl des3 -d -salt -in CO3.des3 -out flag.txt -k nakano` untuk men-decrypt file dan mengembalikan hasilnya ke file `flag.txt`.
+
+![image](https://user-images.githubusercontent.com/78243059/191886366-d8b20058-1a91-4e96-bcd7-6677da76a6a7.png)
+
+Flag: `JaRkOm2022{8uK4N_CtF_k0k_h3h3h3}`
+
+## Kendala
+- Pada soal 10, walaupun password yang kami temukan sudah benar, tapi flag tidak berhasil kami dapatkan karena decryption kami lakukan di WSL. Akhirnya, kami mencoba descryption di terminal linux dan flag berhasil mendapatkan.
+
+
 
 

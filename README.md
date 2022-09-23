@@ -28,6 +28,8 @@ Cara untuk menemukan paket yang menuju ke URI monta.if.its.ac.id adalah dengan m
 `tcp contains monta.if.its.ac.id`
 
 Setelah itu, klik kanan pada salah satu paket yang muncul dan pilih opsi `Follow` yang kemudian dilanjut dengan memilih opsi `TCP Stream`. Sehingga, window seperti berikut ini akan tampil.
+
 ![image](https://user-images.githubusercontent.com/34309557/191884926-bb1d972e-cea9-4d9e-a176-ad55cac99ce2.png)
+
 Pada window tersebut, terlihat bahwa web monta.if.its.ac.id  menggunakan server <b>nginx</b>
 

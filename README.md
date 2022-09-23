@@ -124,8 +124,4 @@ Di terminal linux, kita bisa memasukkan comamnd `openssl des3 -d -salt -in CO3.d
 Flag: `JaRkOm2022{8uK4N_CtF_k0k_h3h3h3}`
 
 ## Kendala
-- Pada soal 10, walaupun password yang kami temukan sudah benar, tapi flag tidak berhasil kami dapatkan karena decryption kami lakukan di WSL. Akhirnya, kami mencoba descryption di terminal linux dan flag berhasil mendapatkan.
-
-
-
-
+- Pada soal 10, walaupun password yang kami temukan sudah benar, tapi flag tidak berhasil kami dapatkan karena decryption kami lakukan di WSL. Akhirnya, kami mencoba descryption di terminal linux dan flag berhasil didapatkan.

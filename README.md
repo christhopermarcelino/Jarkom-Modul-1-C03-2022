@@ -20,22 +20,82 @@ Kelompok C03
 
 ## Soal 1
 **Deskripsi:**
-Sebutkan web server yang digunakan pada "monta.if.its.ac.id"! 
+Terdapat 2 Client yaitu SSS, dan Garden. Semua node terhubung pada router Ostania, sehingga dapat mengakses internet
 
 **Pembahasan:**
-Cara untuk menemukan paket yang menuju ke URL monta.if.its.ac.id adalah dengan mencari paket yang mengandung monta.if.its.ac.id. Akan digunakan filter dengan protokol HTTP yang memiliki host monta.if.its.ac.id.
+Berikut ini adalah network configuration dari setiap node.
 
-`http.host == monta.if.its.ac.id`
+Ostania
+```
+auto eth0
+iface eth0 inet dhcp
 
-Setelah itu, klik kanan pada salah satu paket yang muncul dan pilih opsi `Follow` yang kemudian dilanjut dengan memilih opsi `TCP Stream`. Sehingga, window seperti berikut ini akan tampil.
+auto eth1
+iface eth1 inet static
+	address 10.11.1.1
+	netmask 255.255.255.0
 
-![image](https://user-images.githubusercontent.com/34309557/191884926-bb1d972e-cea9-4d9e-a176-ad55cac99ce2.png)
+auto eth2
+iface eth2 inet static
+	address 10.11.2.1
+	netmask 255.255.255.0
 
-Pada window tersebut, terlihat bahwa web monta.if.its.ac.id  menggunakan server <b>nginx</b>
+auto eth3
+iface eth3 inet static
+	address 10.11.3.1
+	netmask 255.255.255.0
+```
+
+SSS
+```
+auto eth0
+iface eth0 inet static
+	address 10.11.1.2
+	netmask 255.255.255.0
+	gateway 10.11.1.1
+```
+
+Garden
+```
+auto eth0
+iface eth0 inet static
+	address 10.11.1.3
+	netmask 255.255.255.0
+	gateway 10.11.1.1
+```
+
+WISE 
+```
+auto eth0
+iface eth0 inet static
+	address 10.11.2.2
+	netmask 255.255.255.0
+	gateway 10.11.2.1
+```
+
+Berlint
+```
+auto eth0
+iface eth0 inet static
+	address 10.11.3.2
+	netmask 255.255.255.0
+	gateway 10.11.3.1
+```
+
+Eden
+```
+auto eth0
+iface eth0 inet static
+	address 10.11.3.3
+	netmask 255.255.255.0
+	gateway 10.11.3.1
+```
+
+Semua node client (SSS dan Garden) memiliki `nameserver 10.11.2.2 nameserver 10.11.2.3` sementara node lainnya memiliki `nameserver 192.168.122.1`
 
 ## Soal 2
 **Deskripsi:**
-Ishaq sedang bingung mencari topik ta untuk semester ini , lalu ia datang ke website monta dan menemukan detail topik pada website “monta.if.its.ac.id” , judul TA apa yang dibuka oleh ishaq ?
+
 
 **Pembahasan:**
 Cara pengerjaan soal ini juga mirip dengan soal 1. Untuk menemukan URN apa yang mengandung kata kunci "detail", akan dijalankan filter 

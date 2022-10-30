@@ -20,10 +20,18 @@ Kelompok C03
 
 ## Soal 1
 **Deskripsi:**
-Terdapat 2 Client yaitu SSS, dan Garden. Semua node terhubung pada router Ostania, sehingga dapat mengakses internet
+Sebutkan web server yang digunakan pada "monta.if.its.ac.id"! 
 
 **Pembahasan:**
-Berikut ini adalah network configuration dari setiap node.
+Cara untuk menemukan paket yang menuju ke URL monta.if.its.ac.id adalah dengan mencari paket yang mengandung monta.if.its.ac.id. Akan digunakan filter dengan protokol HTTP yang memiliki host monta.if.its.ac.id.
+
+`http.host == monta.if.its.ac.id`
+
+Setelah itu, klik kanan pada salah satu paket yang muncul dan pilih opsi `Follow` yang kemudian dilanjut dengan memilih opsi `TCP Stream`. Sehingga, window seperti berikut ini akan tampil.
+
+![image](https://user-images.githubusercontent.com/34309557/191884926-bb1d972e-cea9-4d9e-a176-ad55cac99ce2.png)
+
+Pada window tersebut, terlihat bahwa web monta.if.its.ac.id  menggunakan server <b>nginx</b>
 
 Ostania
 ```
